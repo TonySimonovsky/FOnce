@@ -1,6 +1,6 @@
 # FOnce
 GTM ruleset to fire tags once per session/day/user.
-This ruleset was initially created for Australian advertising company [Benchmarketing](http://benchmarketing.com.au/).
+This ruleset was initially created for Australian advertising company <a href="http://benchmarketing.com.au/" target="_blank">Benchmarketing</a>.
 
 ## Disclaimer
 FOnce is made for GTM v2. Though it will work in GTM v1 after some simple tweaks (which will require some GTM knowledge from you), I recommend migrating to v2 if you haven't done so.
