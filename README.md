@@ -1,5 +1,5 @@
 # FOnce
-GTM ruleset to fire tags once per session/day/user.
+Ruleset for Google Tag Manager (GTM) to fire any tags once per session/day/user.
 
 Currently only Google tags (like Doubleclick) have options within GTM to choose uniqueness of a pixel firing. The idea of FOnce is to give the ability to fire any tags or pixels you need uniquely.
 
