@@ -1,0 +1,405 @@
+{
+    "exportFormatVersion": 1.3,
+    "exportTime": "2015-06-14 10:57:58",
+    "containerVersion": {
+        "accountId": "2983153",
+        "containerId": "523861",
+        "containerVersionId": "0",
+        "deleted": false,
+        "container": {
+            "accountId": "2983153",
+            "containerId": "523861",
+            "name": "Vertising.ru",
+            "publicId": "GTM-5V69CR",
+            "timeZoneCountryId": "RU",
+            "timeZoneId": "Europe/Moscow",
+            "notes": "",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1434279391993"
+        },
+        "tag": [
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "26",
+                "name": "FOnce - Session Conversion Flag",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_session\";\n\nvar conversionOccurred = 1;\n\nvar d = new Date();\nd.setTime(d.getTime()+{{FOnce - Session lifetime minutes}}*60*1000);\nvar expires = d.toGMTString();\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurred+\"; expires=\"+expires+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (when conversion occurred): \"+document.cookie);\n\n\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "12"
+                ]
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "27",
+                "name": "FOnce - Session Flag",
+                "type": "html",
+                "liveOnly": false,
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "10"
+                },
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_session\";\n\nvar d = new Date();\nd.setTime(d.getTime()+{{FOnce - Session lifetime minutes}}*60*1000);\nvar expires = d.toGMTString();\n\nvar conversionOccurred = {{FOnce - cookie - Session}};\nconversionOccurred = conversionOccurred===undefined ? 0 : conversionOccurred;\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurred+\"; expires=\"+expires+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (all pages): \"+document.cookie);\n\n\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "2147479553"
+                ]
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "42",
+                "name": "FOnce - Today Conversion Flag",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_day\";\nvar conversionOccurred = 1;\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurred+\",\"+{{FOnce - Today date}}+\"; expires=\"+expires+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (when conversion occurred): \"+document.cookie);\n\n\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "20"
+                ]
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "23",
+                "name": "FOnce - Today Flag",
+                "type": "html",
+                "liveOnly": false,
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "10"
+                },
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_day\";\n\nvar todayCookie = {{FOnce - cookie - Today}};\nvar conversionOccurred;\nvar conversionOccurredLastTime;\n\nif( todayCookie === 'undefined' ) {\n    conversionOccurred = 0;\n    conversionOccurredLastTime = {{FOnce - Today date}};\n} else {\n    var todayCookieParts = todayCookie.split(\",\");\n    conversionOccurred = todayCookieParts[0];\n    conversionOccurredLastTime = todayCookieParts[1];\n}\n\nvar conversionOccurredCookieValue;\n\n\nif( conversionOccurredLastTime == {{FOnce - Today date}} ) {\n    conversionOccurredCookieValue = todayConversion+\",\"+conversionOccurredLastTime;\n    console.log(\"conversionOccurredCookieValue: \"+conversionOccurredCookieValue);\n\n} else {\n    conversionOccurredCookieValue = \"0,\"+{{FOnce - Today date}};\n    console.log(\"conversionOccurredCookieValue: \"+conversionOccurredCookieValue);\n}\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurredCookieValue+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (all pages): \"+document.cookie);\n\n\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "2147479553"
+                ]
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "28",
+                "name": "FOnce - User Conversion Flag",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_user\";\n\nvar conversionOccurred = 1;\n\nvar d = new Date();\nd.setTime(d.getTime()+{{FOnce - Session lifetime minutes}}*100*24*60*1000); // 100 days\nvar expires = d.toGMTString();\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurred+\"; expires=\"+expires+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (when conversion occurred): \"+document.cookie);\n\n\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "13"
+                ]
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "29",
+                "name": "FOnce - User Flag",
+                "type": "html",
+                "liveOnly": false,
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "10"
+                },
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_user\";\n\nvar d = new Date();\nd.setTime(d.getTime()+{{FOnce - Session lifetime minutes}}*100*24*60*1000);\nvar expires = d.toGMTString();\n\nvar conversionOccurred = {{FOnce - cookie - User}};\nconversionOccurred = conversionOccurred===undefined ? 0 : conversionOccurred;\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurred+\"; expires=\"+expires+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (all pages): \"+document.cookie);\n\n\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "2147479553"
+                ]
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "tagId": "25",
+                "name": "test_tag",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nconsole.log(\"Test tag fired ok.\");\n</script>"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "12"
+                ]
+            }
+        ],
+        "fingerprint": "0",
+        "trigger": [
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "triggerId": "12",
+                "name": "FOnce - Once a session",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{FOnce - cookie - Session}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "1"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "triggerId": "13",
+                "name": "FOnce - Once a user",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{FOnce - cookie - User}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "1"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "triggerId": "20",
+                "name": "FOnce - Once today",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{FOnce - Was today}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "1"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "variableId": "39",
+                "name": "FOnce - Session lifetime minutes",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "30"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "variableId": "40",
+                "name": "FOnce - Today date",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var now = new Date();\n\nvar currentMonth = now.getMonth()+1;\nif (currentMonth < 10) { currentMonth = '0' + currentMonth; }\n\nvar currentDate = now.getDate();\nif (currentDate < 10) { currentDate = '0' + currentDate; }\n\nreturn (now.getFullYear()+\"-\"+currentMonth+\"-\"+currentDate);\n\n}"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "variableId": "34",
+                "name": "FOnce - Was today",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\nvar now = new Date();\nvar currentMonth = now.getMonth()+1;\nif (currentMonth < 10) { currentMonth = '0' + currentMonth; }\nvar currentDate = now.getDate();\nif (currentDate < 10) { currentDate = '0' + currentDate; }\nvar currentFullDate = (now.getFullYear()+\"-\"+currentMonth+\"-\"+currentDate);\n\n\nvar todayCookie = {{FOnce - cookie - Today}};\nvar todayCookieParts = todayCookie.split(\",\");\nvar conversionOccurred = todayCookieParts[0];\nvar conversionOccurredLastTime = todayCookieParts[1];\n\n\nif( conversionOccurredLastTime == currentFullDate && conversionOccurred == 1 ) {\n    return 1;\n} else {\n    return 0;\n}\n\n\n}"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "variableId": "35",
+                "name": "FOnce - cookie - Session",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "fonce_current_session"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "variableId": "38",
+                "name": "FOnce - cookie - Today",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "fonce_current_day"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "2983153",
+                "containerId": "523861",
+                "variableId": "36",
+                "name": "FOnce - cookie - User",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "fonce_current_user"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0"
+            }
+        ]
+    }
+}
