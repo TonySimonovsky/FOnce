@@ -3,6 +3,8 @@ GTM ruleset to fire tags once per session/day/user.
 
 Currently only Google tags (like Doubleclick) have options within GTM to choose uniqueness of a pixel firing. The idea of FOnce is to give the ability to fire any tags or pixels you need uniquely.
 
+> _Note_, that by a session in terms of FOnce is not the same as a Google Analytics session. FOnce operates following idea of session: set of pageviews with an interval between seperate pageviews not more than 30 minutes (or whatever you set in the "FOnce - Session lifetime minutes" variable. This is pretty close to what Google Analytics consideres a session, but not totally same. There will be some discrepancy. I'm open to any suggestions how to improve this or any other part of FOnce. You can write your suggestions to [42@stony.me](42@stony.me).
+
 This ruleset was initially created for Australian advertising company <a href="http://benchmarketing.com.au/" target="_blank">Benchmarketing</a>.
 
 ## Disclaimer
