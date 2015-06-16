@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 1.3,
-    "exportTime": "2015-06-14 10:57:58",
+    "exportTime": "2015-06-16 15:52:09",
     "containerVersion": {
         "accountId": "2983153",
         "containerId": "523861",
@@ -17,7 +17,10 @@
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1434279391993"
+            "fingerprint": "1434469892908",
+            "enabledBuiltInVariable": [
+                "PAGE_URL"
+            ]
         },
         "tag": [
             {
@@ -31,7 +34,7 @@
                     {
                         "type": "BOOLEAN",
                         "key": "supportDocumentWrite",
-                        "value": "true"
+                        "value": "false"
                     },
                     {
                         "type": "TEMPLATE",
@@ -116,7 +119,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "html",
-                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_day\";\n\nvar todayCookie = {{FOnce - cookie - Today}};\nvar conversionOccurred;\nvar conversionOccurredLastTime;\n\nif( todayCookie === 'undefined' ) {\n    conversionOccurred = 0;\n    conversionOccurredLastTime = {{FOnce - Today date}};\n} else {\n    var todayCookieParts = todayCookie.split(\",\");\n    conversionOccurred = todayCookieParts[0];\n    conversionOccurredLastTime = todayCookieParts[1];\n}\n\nvar conversionOccurredCookieValue;\n\n\nif( conversionOccurredLastTime == {{FOnce - Today date}} ) {\n    conversionOccurredCookieValue = todayConversion+\",\"+conversionOccurredLastTime;\n    console.log(\"conversionOccurredCookieValue: \"+conversionOccurredCookieValue);\n\n} else {\n    conversionOccurredCookieValue = \"0,\"+{{FOnce - Today date}};\n    console.log(\"conversionOccurredCookieValue: \"+conversionOccurredCookieValue);\n}\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurredCookieValue+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (all pages): \"+document.cookie);\n\n\n</script>"
+                        "value": "<script>\n\n\nvar cookieName = \"fonce_current_day\";\n\nvar todayCookie = {{FOnce - cookie - Today}};\nvar conversionOccurred;\nvar conversionOccurredLastTime;\nconsole.log(\"1todayCookie+conversionOccurred+conversionOccurredLastTime: \"+todayCookie+conversionOccurred+\"+\"+conversionOccurredLastTime);\n\nif( todayCookie === undefined ) {\n    conversionOccurred = 0;\n    conversionOccurredLastTime = {{FOnce - Today date}};\nconsole.log(\"2conversionOccurred+conversionOccurredLastTime: \"+conversionOccurred+\"+\"+conversionOccurredLastTime);\n} else {\n    var todayCookieParts = todayCookie.split(\",\");\n    conversionOccurred = todayCookieParts[0];\n    conversionOccurredLastTime = todayCookieParts[1];\nconsole.log(\"3conversionOccurred+conversionOccurredLastTime: \"+conversionOccurred+\"+\"+conversionOccurredLastTime);\n\n}\n\nvar conversionOccurredCookieValue;\n\n\nif( conversionOccurredLastTime == '{{FOnce - Today date}}' ) {\n    conversionOccurredCookieValue = conversionOccurred+\",\"+conversionOccurredLastTime;\n    console.log(\"conversionOccurredCookieValue: \"+conversionOccurredCookieValue);\n\n} else {\n    conversionOccurredCookieValue = \"0,\"+{{FOnce - Today date}};\n    console.log(\"conversionOccurredCookieValue: \"+conversionOccurredCookieValue);\n}\n\n\ndocument.cookie = cookieName+\"=\"+conversionOccurredCookieValue+\"; path=/\";\n\n\nconsole.log(\"*** cookie '\"+cookieName+\"' set (all pages): \"+document.cookie);\n\n\n</script>"
                     }
                 ],
                 "fingerprint": "0",
@@ -192,7 +195,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "html",
-                        "value": "<script>\nconsole.log(\"Test tag fired ok.\");\n</script>"
+                        "value": "<!--\nthis tag is just for testing purposes, you can delete it\n//-->\n\n<script>\nconsole.log(\"Test tag fired ok.\");\n</script>"
                     }
                 ],
                 "fingerprint": "0",
