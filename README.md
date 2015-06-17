@@ -5,8 +5,6 @@ Currently only Google tags (like Doubleclick) have options within GTM to choose 
 
 > _Note_, that a session in terms of FOnce is not the same as a Google Analytics's session. FOnce operates following idea of session: _set of pageviews with an interval between seperate pageviews not more than 30 minutes_ (or whatever you set in the "FOnce - Session lifetime minutes" variable). This is pretty close to what Google Analytics consideres a session, but not totally same. There will be some discrepancy. I'm open to any suggestions how to improve this or any other part of FOnce. Please, write your suggestions to [42@stony.me](mailto:42@stony.me).
 
-This ruleset was initially created for Australian advertising company <a href="http://benchmarketing.com.au/" target="_blank">Benchmarketing</a>.
-
 ## Disclaimer
 FOnce is made for GTM v2. Though it will work in GTM v1 after some simple tweaks (which will require some GTM knowledge from you), I recommend migrating to v2 if you haven't done so.
 
